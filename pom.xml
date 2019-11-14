@@ -11,12 +11,26 @@
     <modules>
         <module>Antz-Tools</module>
         <module>Antz-Discovery-Eureka</module>
+        <module>Antz-Domain-Core-One</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
 
     <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.20</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>5.4.6.Final</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
 
