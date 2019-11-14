@@ -31,6 +31,7 @@ public class PropertiesTest {
         pps.load(in);
         OutputStream out = new FileOutputStream(filePath);
         pps.setProperty(key, value);
+        //实时追加到文件末梢
         pps.store(out, "Update " + key);
     }
 
