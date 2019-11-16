@@ -1,7 +1,5 @@
 package com.antz.tools.io;
 
-import lombok.extern.log4j.Log4j;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -13,7 +11,6 @@ import java.util.UUID;
  * @description
  * @date 2019/11/14
  */
-@Slf4j
 public class PropertiesTest {
 
     public String loadProperties(String filePath, String key) {
