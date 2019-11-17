@@ -15,6 +15,13 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class ScheduleServiceTest {
 
+    /**
+     * java.util.concurrent.ScheduledThreadPoolExecutor.ScheduledFutureTask#setNextRunTime()
+     * ByRate与ByDelay的区别
+     * ByRate在初始化时，period是正值，它的逻辑是在上一次的执行的时间上 time + period的值，即下一次的执行时间，可查看{@link ScheduledThreadPoolExecutor}
+     * ByDelay在初始化时，period会被赋值成负值，它的逻辑是在 now() + ((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay)) ，即下一次的执行时间
+     */
+
     ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(10, new BasicThreadFactory.Builder().namingPattern("test-%d").build());
 
     public void ScheduleServiceTest() {
