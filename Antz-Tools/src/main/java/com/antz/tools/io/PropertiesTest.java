@@ -1,5 +1,7 @@
 package com.antz.tools.io;
 
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 import java.time.LocalDate;
@@ -11,18 +13,24 @@ import java.util.UUID;
  * @description
  * @date 2019/11/14
  */
+@Slf4j
 public class PropertiesTest {
 
-    public String loadProperties(String filePath, String key) {
+    public String loadProperties(String filePath, String key) throws IOException {
         Properties properties = new Properties();
+        InputStream in = null;
         try {
-            InputStream in = new BufferedInputStream(new FileInputStream(filePath));
+            in = new BufferedInputStream(new FileInputStream(filePath));
             properties.load(in);
             String value = properties.getProperty(key);
             return value;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        } finally {
+            if (in != null) {
+                in.close();
+            }
         }
     }
 
