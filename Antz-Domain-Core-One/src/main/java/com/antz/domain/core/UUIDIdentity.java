@@ -31,13 +31,4 @@ public class UUIDIdentity implements RandomIdentity<String>, Identity<String> {
         return value;
     }
 
-    @Override
-    public boolean isEmpty() {
-        return value.isEmpty();
-    }
-
-    @Override
-    public String emptyId() {
-        return "";
-    }
 }

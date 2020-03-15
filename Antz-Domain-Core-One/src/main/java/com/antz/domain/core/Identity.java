@@ -11,8 +11,4 @@ public interface Identity<T> extends Serializable {
 
     T value();
 
-    boolean isEmpty();
-
-    T emptyId();
-
 }

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 /**
- * @author antz-H
+ * @author antz
  * @description
- * @date 2020/3/8 16:29
+ * @date 2020/3/8 0008 16:29
  **/
 @EnableMongoAuditing
 @SpringBootApplication

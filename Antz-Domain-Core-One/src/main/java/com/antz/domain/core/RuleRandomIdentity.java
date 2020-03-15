@@ -52,16 +52,6 @@ public class RuleRandomIdentity implements Identity<String>, RandomIdentity<Stri
     }
 
     @Override
-    public final boolean isEmpty() {
-        return value.isEmpty();
-    }
-
-    @Override
-    public final String emptyId() {
-        return "";
-    }
-
-    @Override
     public final String next() {
         return compose(prefix, seed, joiner);
     }
