@@ -4,6 +4,11 @@ package com.antz.algorithms.binarysearch;
  * @author huang.huang
  * @description
  * @date 2021/7/17 22:25
+ *
+ * 最好时间 O(1)
+ * 平均时间 O(log n)
+ * 最坏时间 O(log n)
+ * 空间    O(1)
  **/
 public class BinarySearch {
 
