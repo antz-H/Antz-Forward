@@ -9,6 +9,10 @@ package com.antz.algorithms.selectionsort;
  * 最坏时间 O(n^2)
  * 空间    O(1)
  * 不稳定排序
+ *
+ * 每轮遍历都是会选择一个最大（小）的元素，与BubbleSort区别是每次都是选择一个元素依次与每一个其它元素compare and swap，
+ *
+ * 首先将array分成两组，第一组是sorted-array，第二组是unsorted-array，每次遍历找出最小的元素，放进sorted-array
  **/
 public class SelectionSort {
 

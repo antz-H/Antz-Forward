@@ -10,6 +10,8 @@ package com.antz.algorithms.bubblesort;
  * 最坏时间 O(n^2)
  * 空间    O(1)
  * 稳定排序
+ *
+ * 每轮遍历都是会选择一个最大（小）的元素，与SelectionSort区别是每次都是相邻元素进行compare and swap，
  **/
 public class BubbleSort {
 
