@@ -22,7 +22,6 @@ public class BubbleSort {
     /**
      * 从上往下，把大值下沉，所以每次选出的是最大值，这样每一轮必须都是从头开始
      * <p>
-     * 效率适中，比较次数较多 todo
      *
      * @param array
      * @return
@@ -31,8 +30,8 @@ public class BubbleSort {
         int count = 0;
 
         for (int i = 0; i < array.length; i++) {
-
-            for (int j = 0; j < array.length - 1; j++) {
+            // 因为大值下沉，所以随着i的增加，array.length -i 的位置已经是有序的，那么可以减少排序的次数
+            for (int j = 0; j < array.length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
                     int temp = array[j];
                     array[j] = array[j + 1];
@@ -49,7 +48,6 @@ public class BubbleSort {
      * second way
      * 从上向下，每次选出当前轮中最小的值，所以每一轮都无法选择最大或最小值，但是所有遍历完以后，自动就是有序的
      * <p>
-     * 效率最低，比较次数最多 todo
      *
      * @param array
      * @return
@@ -77,7 +75,6 @@ public class BubbleSort {
      * @param array
      * @return 从底向上把小值往上冒泡，每一轮都能选择个较小值，这样可以减少排序的次数，仅需比较j>i的情况
      * <p>
-     * 效率最高，比较次数较少 todo
      */
     public int[] sort_3(int[] array) {
         int count = 0;
