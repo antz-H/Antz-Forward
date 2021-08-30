@@ -16,6 +16,7 @@
         <module>Antz-Domain-Core-TWO</module>
         <module>Design-Pattern</module>
         <module>Antz-Algorithms</module>
+        <module>Antz-TDD</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
