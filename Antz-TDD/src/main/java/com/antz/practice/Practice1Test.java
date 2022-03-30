@@ -37,8 +37,30 @@ public class Practice1Test {
     public void test4() {
 
         Assertions.assertThat(Practice1.countMoney3(4)).isEqualTo(10);
+        Assertions.assertThat(Practice1.countMoney3(8)).isEqualTo(30);
         Assertions.assertThat(Practice1.countMoney3(10)).isEqualTo(37);
         Assertions.assertThat(Practice1.countMoney3(20)).isEqualTo(96);
+
+    }
+
+    @Test
+    public void test5() {
+
+        Assertions.assertThat(Practice1.countByTailRecursion(4)).isEqualTo(10);
+        Assertions.assertThat(Practice1.countByTailRecursion(8)).isEqualTo(30);
+        Assertions.assertThat(Practice1.countByTailRecursion(10)).isEqualTo(37);
+        Assertions.assertThat(Practice1.countByTailRecursion(20)).isEqualTo(96);
+
+    }
+
+
+    @Test
+    public void test6() {
+
+      //  Assertions.assertThat(Practice1.countByTailRecursion2(4)).isEqualTo(10);
+       // Assertions.assertThat(Practice1.countByTailRecursion2(8)).isEqualTo(30);
+       // Assertions.assertThat(Practice1.countByTailRecursion2(10)).isEqualTo(37);
+        Assertions.assertThat(Practice1.countByTailRecursion2(20)).isEqualTo(96);
 
     }
 }

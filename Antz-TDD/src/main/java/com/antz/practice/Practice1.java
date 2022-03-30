@@ -62,19 +62,20 @@ public class Practice1 {
 
     public static int countMoney3(final int days) {
         int perStartAdd = 1;
-        return count(days, perStartAdd);
+        return count(perStartAdd, days);
     }
 
-    private static int count(int days, int weekStartValue) {
+    private static int count(int weekStartValue, int days) {
         if (days < 7) {
             return saveMoneyForDays2(weekStartValue, days);
         } else {
-            return saveMoneyForDays2(weekStartValue, 7) + count(days - 7, weekStartValue + 1);
+            return saveMoneyForDays2(weekStartValue, 7) + count(weekStartValue + 1, days - 7);
         }
     }
 
     private static int saveMoneyForDays2(int start, int n) {
         int money = n * start + n * (n - 1) / 2;
+        System.out.println(start + "--" + n + "---" + money);
         return money;
     }
 
@@ -90,4 +91,36 @@ public class Practice1 {
     }
 
 
+    public static int countByTailRecursion(int days) {
+        int weekStartValue = 1;
+        int weeks = days / 7;
+        int totalMoney = 0;
+        return tailRecursion(weeks, weekStartValue, days, totalMoney);
+    }
+
+    private static int tailRecursion(int weeks, int weekStartValue, int calculDays, int money) {
+        if (weeks == 0) {
+            return money + saveMoneyForDays2(weekStartValue, calculDays);
+        } else {
+            return tailRecursion(weeks - 1, weekStartValue + 1, calculDays - 7, money + saveMoneyForDays2(weekStartValue, 7));
+        }
+    }
+
+    public static int countByTailRecursion2(int days) {
+        int weekStartValue = 1;
+        int totalMoney = 0;
+        if (days <= 7) {
+            return saveMoneyForDays2(weekStartValue, days);
+        } else {
+            return saveMoneyForDays2(weekStartValue, 7) + tailRecursion2(weekStartValue +1, days, totalMoney);
+        }
+    }
+
+    private static int tailRecursion2(int weekStartValue, int days, int money) {
+        if (days < 7) {
+            return money + saveMoneyForDays2(weekStartValue, days);
+        } else {
+            return tailRecursion2(weekStartValue + 1, days - 7, money + saveMoneyForDays2(weekStartValue, 7));
+        }
+    }
 }
