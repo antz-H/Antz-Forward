@@ -7,7 +7,7 @@ package com.antz.pattern.strategy;
  **/
 public class AliPay implements IPay {
     @Override
-    public boolean pay(String money) {
+    public boolean pay(Double money) {
         return false;
     }
 }
